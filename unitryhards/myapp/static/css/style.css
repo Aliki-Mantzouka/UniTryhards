@@ -246,3 +246,142 @@ body {
   background-color: #FF9800;
   color: white;
 }
+
+/* General Body Styling */
+body {
+  background-color: #f7f7f7;
+  font-family: 'Arial', sans-serif;
+  padding-top: 50px;
+  margin: 0;
+}
+
+/* Container Styling */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Profile Card Styling */
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Header Section */
+.profile-header h2 {
+  font-size: 32px;
+  color: #2d8b34; /* Green color for the header */
+  font-weight: bold;
+}
+
+.profile-header p {
+  font-size: 18px;
+  color: #777;
+}
+
+/* Profile Picture Styling */
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #2d8b34; /* Green border for profile picture */
+}
+
+.profile-picture button {
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+/* Personal Information Section */
+.personal-info h3 {
+  font-size: 24px;
+  color: #2d8b34;
+}
+
+.personal-info ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 18px;
+}
+
+.personal-info li {
+  margin: 10px 0;
+}
+
+.personal-info button {
+  background-color: #2d8b34;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+}
+
+.personal-info button:hover {
+  background-color: #45a049;
+}
+
+/* Change Password Section */
+.change-password h3 {
+  font-size: 24px;
+  color: #2d8b34;
+}
+
+.change-password button {
+  background-color: #ff7f00;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+}
+
+.change-password button:hover {
+  background-color: #d46500;
+}
+
+/* Logout Section */
+.logout-section button {
+  background-color: #f44336;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+}
+
+.logout-section button:hover {
+  background-color: #e41f1f;
+}
+
+/* Styling for Text and Buttons */
+h2, h3 {
+  font-weight: bold;
+}
+
+button {
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .profile-card {
+      padding: 20px;
+  }
+
+  .profile-header h2 {
+      font-size: 28px;
+  }
+
+  .profile-header p {
+      font-size: 16px;
+  }
+
+  .personal-info h3 {
+      font-size: 20px;
+  }
+}

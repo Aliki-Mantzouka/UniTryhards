@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>User Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEJ5mJwP2QvVd8n1UlNpLsoydvWAlmHGFxYiyl8db6d5ephGqylsRx6xtPb51" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -13,12 +13,44 @@
 <body style="background-color: #f7f7f7; padding-top: 50px;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="profile-box p-4 border rounded shadow" style="background-color: #fff;">
-                    <h2>Welcome to UniTryhards, {{ user.username }}!</h2>
-                    <p>This is your profile page.</p>
-                    <p>Here, you can view and edit your personal information, manage your uploaded resources, and more.</p>
-                    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+            <div class="col-md-8">
+                <!-- Profile Box -->
+                <div class="profile-box p-4 border rounded shadow">
+                    <!-- Profile Header -->
+                    <div class="profile-header text-center">
+                        <h2>Welcome, {{ user.username }}!</h2>
+                        <p>Your profile details are below</p>
+                    </div>
+
+                    <!-- Profile Picture Section -->
+                    <div class="profile-pic text-center">
+                        <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle"
+                            style="width: 150px; height: 150px;">
+                        <br>
+                        <button class="btn btn-secondary mt-3">Change Picture</button>
+                    </div>
+
+                    <!-- Personal Information Section -->
+                    <div class="profile-details mt-4">
+                        <h3>Personal Information</h3>
+                        <ul class="list-unstyled">
+                            <li><strong>Username:</strong> {{ user.username }}</li>
+                            <li><strong>Email:</strong> {{ user.email }}</li>
+                            <li><strong>Phone:</strong> {{ user.profile.phone }}</li>
+                        </ul>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+
+                    <!-- Change Password Section -->
+                    <div class="password-change mt-4">
+                        <h3>Change Password</h3>
+                        <button class="btn btn-warning">Change Password</button>
+                    </div>
+
+                    <!-- Logout Section -->
+                    <div class="logout-section mt-4 text-center">
+                        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
