@@ -12,8 +12,8 @@ class CustomLogoutView(LogoutView):
     next_page = '/login'
 
 # Hello View
-def hello_view(request):
-    return HttpResponse("Hello, welcome to UniTryhards!")
+#def hello_view(request):
+    #return HttpResponse("Hello, welcome to UniTryhards!")
 
 # Sign Up View
 def signup_view(request):
@@ -22,7 +22,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()  # Save the user without authentication
             login(request, user)  # Log the user in directly after creation
-            return redirect('hello')  # Redirect to the 'hello' page after successful signup
+            return redirect('home')  # Redirect to the 'home' page after successful signup
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
@@ -35,7 +35,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)  # Log in the user after successful authentication
-            return redirect('hello')  # Redirect to the 'hello' page after successful login
+            return redirect('home')  # Redirect to the 'home' page after successful login
         else:
             return HttpResponse("Invalid login credentials")  # Display error message for invalid login
     return render(request, 'login.html')
@@ -43,8 +43,12 @@ def login_view(request):
 # Logout View
 def logout_view(request):
     logout(request)
-    return redirect('hello')  # Redirect to the 'hello' page after logging out
+    return redirect('home')  # Redirect to the 'hello' page after logging out
 
 @login_required
 def profile_view(request):
     return render(request, 'profile.html')
+
+@login_required  # Εξασφαλίζει ότι μόνο συνδεδεμένοι χρήστες έχουν πρόσβαση
+def home(request):
+    return render(request, 'home.html')  # Επιστρέφει το home.html template

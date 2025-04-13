@@ -129,4 +129,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/hello/'  # Ανακατεύθυνση στην hello σελίδα μετά το login
+LOGIN_REDIRECT_URL = 'home'  # Ανακατεύθυνση στην hello σελίδα μετά το login
