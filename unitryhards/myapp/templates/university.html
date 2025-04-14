@@ -18,9 +18,9 @@
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="university">Choose University:</label>
-                        <select name="university" id="university" class="form-control mb-3">
+                        <select name="university">
                             {% for university in universities %}
-                            <option value="{{ university }}">{{ university }}</option>
+                                <option value="{{ university.id }}">{{ university.name }}</option>
                             {% endfor %}
                         </select>
                     </div>

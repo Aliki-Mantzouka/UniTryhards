@@ -9,7 +9,8 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('profile/', views.profile_view, name='profile'),
     path('home/', views.home, name='home'),
-    path('university/', views.university_view, name='university'),
-    path('pick_department/<str:university>/', views.pick_department_view, name='pick_department'),
-    path('papers/', views.papers, name='papers'),
+    path('university/', views.university_view, name='university'),  # University selection
+    path('department/<int:university_id>/', views.department_view, name='department'),  # Department selection
+    path('course_selection/<int:university_id>/<int:department_id>/', views.course_selection_view, name='course_selection'),
+    path('papers/<int:department_id>/<int:course_id>/', views.papers_view, name='papers') # Papers page
 ]   
