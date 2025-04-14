@@ -19,9 +19,9 @@
                     <div class="form-group">
                         <label for="university">Choose University:</label>
                         <select name="university" id="university" class="form-control mb-3">
-                            <option value="university1">University 1</option>
-                            <option value="university2">University 2</option>
-                            <option value="university3">University 3</option>
+                            {% for university in universities %}
+                            <option value="{{ university }}">{{ university }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <button type="submit" class="btn btn-success mt-3">Next</button>

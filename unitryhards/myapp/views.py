@@ -53,14 +53,53 @@ def profile_view(request):
 def home(request):
     return render(request, 'home.html')  # Επιστρέφει το home.html template
 
+universities = [
+    "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών",
+    "Εθνικό Μετσόβιο Πολυτεχνείο",   
+    "Οικονομικό Πανεπιστήμιο Αθηνών",
+    "Γεωπονικό Πανεπιστήμιο Αθηνών",
+    "Πάντειο Πανεπιστήμιο",
+    "Πανεπιστήμιο Δυτικής Αττικής",
+    "Χαροκόπειο Πανεπιστήμιο",
+    "Πανεπιστήμιο Πειραιώς",
+    "Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης",
+    "Πανεπιστήμιο Μακεδονίας",
+    "Πανεπιστήμιο Δυτικής Μακεδονίας",
+    "Διεθνές Πανεπιστήμιο της Ελλάδος",
+    "Δημοκρίτειο Πανεπιστήμιο Θράκης",
+    "Πανεπιστήμιο Ιωαννίνων",
+    "Πανεπιστήμιο Θεσσαλίας",
+    "Πανεπιστήμιο Πελοποννήσου",
+    "Πανεπιστήμιο Πατρών",
+    "Πανεπιστήμιο Αιγαίου",
+    "Ιόνιο Πανεπιστήμιο",
+    "Πανεπιστήμιο Κρήτης",
+    "Πολυτεχνείο Κρήτης",
+    "Ελληνικό Μεσογειακό Πανεπιστήμιο",
+    "Ελληνικό Ανοικτό Πανεπιστήμιο",
+    "Ανώτατη Σχολή Καλών Τεχνών",
+    "Ανώτατη Σχολή Παιδαγωγικής και Τεχνολογικής Εκπαίδευσης",
+    "Ανώτατη Σχολή Τουριστικής Εκπαίδευσης",
+    "Ανώτατη Εκκλησιαστική Ακαδημία Αθήνας",
+    "Ανώτατη Εκκλησιαστική Ακαδημία Βελλάς Ιωαννίνων",
+    "Ανώτατη Εκκλησιαστική Ακαδημία Θεσσαλονίκης",
+    "Πατριαρχική Ανώτατη Εκκλησιαστική Ακαδημία Κρήτης",
+    "Ακαδημία Εμπορικού Ναυτικού Μακεδονίας",
+    "Μεσογειακό Αγρονομικό Ινστιτούτο Χανίων",
+    "Στρατιωτική Σχολή Ευελπίδων",
+    "Σχολή Ικάρων",
+    "Σχολή Ναυτικών Δοκίμων"
+]
+
 # View for selecting University
 def university_view(request):
+    context = {'universities': universities}
     if request.method == 'POST':
         # Get the selected university from the form
         university = request.POST.get('university')
         # Redirect to the department selection page with the university selected
         return redirect('pick_department', university=university)
-    return render(request, 'university.html')
+    return render(request, 'university.html', context)
 
 # View for selecting Department based on the selected University
 def pick_department_view(request, university):
