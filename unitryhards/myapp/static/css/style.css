@@ -249,31 +249,33 @@ body {
 
 /* General Body Styling */
 body {
-  background-color: #f7f7f7;
   font-family: 'Arial', sans-serif;
-  padding-top: 50px;
+  background-color: #f7f7f7; /* Light gray background for the page */
   margin: 0;
+  padding: 0;
 }
 
 /* Container Styling */
 .container {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-/* Profile Card Styling */
-.profile-card {
-  background-color: #ffffff;
+/* Profile Box Styling */
+.profile-box {
+  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  text-align: center;
 }
 
-/* Header Section */
+/* Profile Header */
 .profile-header h2 {
   font-size: 32px;
-  color: #2d8b34; /* Green color for the header */
   font-weight: bold;
+  color: #2d8b34; /* Green color for the header */
 }
 
 .profile-header p {
@@ -282,94 +284,75 @@ body {
 }
 
 /* Profile Picture Styling */
-.profile-picture img {
+.profile-pic img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   border: 3px solid #2d8b34; /* Green border for profile picture */
 }
 
-.profile-picture button {
+/* Button Styles */
+button {
   font-size: 16px;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border-radius: 8px;
 }
 
-/* Personal Information Section */
-.personal-info h3 {
-  font-size: 24px;
-  color: #2d8b34;
-}
-
-.personal-info ul {
-  list-style-type: none;
-  padding: 0;
-  font-size: 18px;
-}
-
-.personal-info li {
-  margin: 10px 0;
-}
-
-.personal-info button {
-  background-color: #2d8b34;
+/* Edit Profile and Change Password Buttons */
+.profile-details button,
+.password-change button {
+  background-color: #4CAF50;
   color: white;
-  padding: 12px 30px;
-  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.personal-info button:hover {
+.profile-details button:hover,
+.password-change button:hover {
   background-color: #45a049;
 }
 
-/* Change Password Section */
-.change-password h3 {
-  font-size: 24px;
-  color: #2d8b34;
-}
-
-.change-password button {
-  background-color: #ff7f00;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 8px;
-}
-
-.change-password button:hover {
-  background-color: #d46500;
-}
-
-/* Logout Section */
+/* Logout Button */
 .logout-section button {
-  background-color: #f44336;
+  background-color: #FF5733;
   color: white;
   padding: 12px 30px;
   border-radius: 8px;
+  margin-top: 20px;
 }
 
 .logout-section button:hover {
-  background-color: #e41f1f;
+  background-color: #d4422b;
 }
 
-/* Styling for Text and Buttons */
-h2, h3 {
+/* Personal Information Section Styling */
+.profile-details h3 {
+  font-size: 24px;
   font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 20px;
 }
 
-button {
-  font-size: 16px;
-  border-radius: 8px;
-  padding: 12px 30px;
-  cursor: pointer;
+.profile-details ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-button:hover {
-  opacity: 0.9;
+.profile-details li {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
 }
 
-/* Responsive Design for Mobile */
+/* General container styling */
+.profile-pic, .profile-details, .password-change, .logout-section {
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments for smaller screen sizes */
 @media (max-width: 768px) {
-  .profile-card {
+  .profile-box {
       padding: 20px;
   }
 
@@ -379,9 +362,5 @@ button:hover {
 
   .profile-header p {
       font-size: 16px;
-  }
-
-  .personal-info h3 {
-      font-size: 20px;
   }
 }
