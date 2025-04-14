@@ -52,3 +52,24 @@ def profile_view(request):
 @login_required  # Εξασφαλίζει ότι μόνο συνδεδεμένοι χρήστες έχουν πρόσβαση
 def home(request):
     return render(request, 'home.html')  # Επιστρέφει το home.html template
+
+# View for selecting University
+def university_view(request):
+    if request.method == 'POST':
+        # Get the selected university from the form
+        university = request.POST.get('university')
+        # Redirect to the department selection page with the university selected
+        return redirect('pick_department', university=university)
+    return render(request, 'university.html')
+
+# View for selecting Department based on the selected University
+def pick_department_view(request, university):
+    if request.method == 'POST':
+        # Get the selected department
+        department = request.POST.get('department')
+        # Redirect to the papers selection page with the selected department
+        return redirect('papers')
+    return render(request, 'department.html', {'university': university})
+
+def papers(request):
+    return render(request, 'papers.html')
