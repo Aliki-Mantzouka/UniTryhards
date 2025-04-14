@@ -364,3 +364,101 @@ button {
       font-size: 16px;
   }
 }
+
+/* University Page */
+.university-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4CAF50;
+}
+
+.university-page .container {
+  width: 60%;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Department Page */
+.department-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4CAF50;
+}
+
+.department-page .container {
+  width: 70%;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Papers Page */
+.papers-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4CAF50;
+}
+
+.papers-page .container {
+  width: 70%;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Universal Styling for Dropdown and Forms (This will be applied to all three pages) */
+.container select,
+.container button {
+  font-size: 18px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* University Page Select Dropdown */
+.university-page select {
+  width: 60%;
+}
+
+/* Department Page Select Dropdown */
+.department-page select {
+  width: 65%;
+}
+
+/* Papers Page Select Dropdown */
+.papers-page select {
+  width: 65%;
+}
+
+/* Button Styling */
+.container button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container button:hover {
+  background-color: #45a049;
+}
+
+/* Centering the content */
+.university-page .container,
+.department-page .container,
+.papers-page .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
