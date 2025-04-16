@@ -1,10 +1,11 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate, logout
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView, LogoutView
-from .models import University, Department, Course, Paper
+from .models import University, Department, Course, Paper, Comment
+from .forms import CommentForm
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
@@ -54,44 +55,6 @@ def profile_view(request):
 def home(request):
     return render(request, 'home.html')  # Επιστρέφει το home.html template
 
-#universities = [
-    #"Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών",
-    #"Εθνικό Μετσόβιο Πολυτεχνείο",   
-    #"Οικονομικό Πανεπιστήμιο Αθηνών",
-    #"Γεωπονικό Πανεπιστήμιο Αθηνών",
-    #"Πάντειο Πανεπιστήμιο",
-    #"Πανεπιστήμιο Δυτικής Αττικής",
-    #"Χαροκόπειο Πανεπιστήμιο",
-    #"Πανεπιστήμιο Πειραιώς",
-    #"Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης",
-    #"Πανεπιστήμιο Μακεδονίας",
-    #"Πανεπιστήμιο Δυτικής Μακεδονίας",
-    #"Διεθνές Πανεπιστήμιο της Ελλάδος",
-    #"Δημοκρίτειο Πανεπιστήμιο Θράκης",
-    #"Πανεπιστήμιο Ιωαννίνων",
-    #"Πανεπιστήμιο Θεσσαλίας",
-    #"Πανεπιστήμιο Πελοποννήσου",
-    #"Πανεπιστήμιο Πατρών",
-    #"Πανεπιστήμιο Αιγαίου",
-    #"Ιόνιο Πανεπιστήμιο",
-    #"Πανεπιστήμιο Κρήτης",
-    #"Πολυτεχνείο Κρήτης",
-    #"Ελληνικό Μεσογειακό Πανεπιστήμιο",
-    #"Ελληνικό Ανοικτό Πανεπιστήμιο",
-    #"Ανώτατη Σχολή Καλών Τεχνών",
-    #"Ανώτατη Σχολή Παιδαγωγικής και Τεχνολογικής Εκπαίδευσης",
-    #"Ανώτατη Σχολή Τουριστικής Εκπαίδευσης",
-    #"Ανώτατη Εκκλησιαστική Ακαδημία Αθήνας",
-    #"Ανώτατη Εκκλησιαστική Ακαδημία Βελλάς Ιωαννίνων",
-    #"Ανώτατη Εκκλησιαστική Ακαδημία Θεσσαλονίκης",
-    #"Πατριαρχική Ανώτατη Εκκλησιαστική Ακαδημία Κρήτης",
-    #"Ακαδημία Εμπορικού Ναυτικού Μακεδονίας",
-    #"Μεσογειακό Αγρονομικό Ινστιτούτο Χανίων",
-    #"Στρατιωτική Σχολή Ευελπίδων",
-    #"Σχολή Ικάρων",
-    #"Σχολή Ναυτικών Δοκίμων"
-#]
-
 # View for selecting university
 def university_view(request):
     universities = University.objects.all()  # Fetch all universities from the database
@@ -126,6 +89,7 @@ def course_selection_view(request, university_id, department_id):
     })
 
 def papers_view(request, department_id, course_id):
+    from .models import Paper
     department = Department.objects.get(id=department_id)
     course = Course.objects.get(id=course_id)
     papers = Paper.objects.filter(course=course)  # You can filter papers by course
@@ -133,4 +97,31 @@ def papers_view(request, department_id, course_id):
         'department': department,
         'course': course,
         'papers': papers,
+    })
+
+
+def paper_detail_view(request, department_id, course_id, paper_id):
+    # Get the specific paper based on the paper_id
+    paper = get_object_or_404(Paper, id=paper_id)
+    # Get department and course based on the passed ids
+    department = Department.objects.get(id=department_id)
+    course = Course.objects.get(id=course_id)
+    # Handle comment form submission
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            new_comment = form.save(commit=False)
+            new_comment.paper = paper  # Associate the comment with the paper
+            new_comment.user = request.user  # Associate the comment with the current user
+            new_comment.save()
+            return redirect('paper_detail', department_id=department_id, course_id=course_id, paper_id=paper_id)
+    else:
+        form = CommentForm()
+    comments = Comment.objects.filter(paper=paper)
+    return render(request, 'paper_detail.html', {
+        'department': department,
+        'course': course,
+        'paper': paper,
+        'form': form,
+        'comments': comments,
     })
