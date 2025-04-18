@@ -462,3 +462,114 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+/* Comment Section Title */
+.comments-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Add Comment Title */
+.add-comment-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Stylish Textarea for Comments */
+.comment-input {
+  width: 100%; /* Made the comment input field as wide as the form */
+  max-width: 600px; /* Setting a max width to prevent it from getting too wide on larger screens */
+  padding: 12px 15px; /* Adjusted padding for better spacing */
+  border: 2px solid #45a049;
+  border-radius: 8px;
+  font-size: 1.1em;
+  resize: none;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-input:focus {
+  border-color: #00c4cc;
+  box-shadow: 0 0 5px rgba(0, 196, 204, 0.3);
+  outline: none;
+}
+
+/* Button Styling */
+.btn-submit {
+  padding: 8px 30px;
+    background-color: #00c4cc;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.btn-submit:hover {
+  background-color: #00b3b0;
+}
+
+/* Comment List Styling */
+.comments-list {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.comment-item {
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.comment-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Styling the comment text */
+.comment-text {
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+/* No Comments Text */
+.no-comments {
+  font-size: 1.2em;
+  color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .comment-form {
+      width: 100%;
+      padding: 0 20px;
+  }
+  
+  .comment-input {
+      font-size: 1em;
+  }
+
+  .btn-submit {
+      font-size: 1.1em;
+  }
+}
+
+/* Comment Section */
+textarea.comment-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  font-size: 1.1em;
+}
