@@ -48,3 +48,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.paper.title}"
+
+# Favourite Papers Model  
+class FavoritePaper(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    paper = models.ForeignKey(Paper, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('user', 'paper')

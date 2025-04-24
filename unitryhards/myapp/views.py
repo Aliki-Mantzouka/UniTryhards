@@ -4,8 +4,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView, LogoutView
-from .models import University, Department, Course, Paper, Comment
+from .models import University, Department, Course, Paper, Comment, FavoritePaper
 from .forms import CommentForm
+from django.http import JsonResponse
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
@@ -103,6 +104,7 @@ def papers_view(request, department_id, course_id):
 def paper_detail_view(request, department_id, course_id, paper_id):
     # Get the specific paper based on the paper_id
     paper = get_object_or_404(Paper, id=paper_id)
+    is_favorite = FavoritePaper.objects.filter(user=request.user, paper=paper).exists()
     # Get department and course based on the passed ids
     department = Department.objects.get(id=department_id)
     course = Course.objects.get(id=course_id)
@@ -115,6 +117,12 @@ def paper_detail_view(request, department_id, course_id, paper_id):
             new_comment.user = request.user  # Associate the comment with the current user
             new_comment.save()
             return redirect('paper_detail', department_id=department_id, course_id=course_id, paper_id=paper_id)
+        if 'favorite' in request.POST:
+            if is_favorite:
+                FavoritePaper.objects.filter(user=request.user, paper=paper).delete()
+            else:
+                FavoritePaper.objects.create(user=request.user, paper=paper)
+        return redirect('paper_detail', department_id=department_id, course_id=course_id, paper_id=paper_id)
     else:
         form = CommentForm()
     comments = Comment.objects.filter(paper=paper)
@@ -122,7 +130,26 @@ def paper_detail_view(request, department_id, course_id, paper_id):
         'department': department,
         'course': course,
         'paper': paper,
+        'is_favorite': is_favorite,
         'form': form,
         'comments': comments,
         'file_url': paper.file.url
     })
+
+@login_required
+def toggle_favorite(request, paper_id):
+    paper = Paper.objects.get(id=paper_id)
+    user = request.user
+
+    # Check if the paper is already favorited by the user
+    favorite, created = FavoritePaper.objects.get_or_create(user=user, paper=paper)
+
+    if not created:
+        # If it's already a favorite, remove it
+        favorite.delete()
+        favorited = False
+    else:
+        # If it's not a favorite, add it
+        favorited = True
+
+    return JsonResponse({'favorited': favorited})

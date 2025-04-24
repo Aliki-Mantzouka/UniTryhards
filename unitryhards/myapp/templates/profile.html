@@ -37,6 +37,17 @@
                         </ul>
                         <button class="btn btn-primary">Edit Profile</button>
                     </div>
+                    <!-- Favorite Papers Section -->
+                    <div class="favorite-papers mt-4">
+                        <h3>Favorite Papers</h3>
+                        <ul>
+                            {% for favorite in user.favoritepaper_set.all %}
+                            <li>{{ favorite.paper.title }}</li>
+                            {% empty %}
+                            <li>No favorite papers yet</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                     <!-- Change Password Section -->
                     <div class="password-change mt-4">
                         <h3>Change Password</h3>

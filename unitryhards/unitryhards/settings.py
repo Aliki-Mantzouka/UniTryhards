@@ -130,3 +130,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'  # Ανακατεύθυνση στην hello σελίδα μετά το login
+
+# Media configuration
+MEDIA_URL = '/media/'  # URL for media files
+MEDIA_ROOT = BASE_DIR / 'media'  # Path to the media files on the filesystem

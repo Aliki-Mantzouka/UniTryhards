@@ -7,6 +7,8 @@
     <title>{{ paper.title }} - Paper Detail</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Included FontAwesome for star icon -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container mt-5">
@@ -16,6 +18,9 @@
         <a href="{% url 'paper_detail' department_id=department.id course_id=course.id paper_id=paper.id %}" class="btn btn-primary">View Paper</a>
         <!-- Download Button -->
          <a href="{{ paper.file_url }}" download class="btn btn-success">Download Paper</a>
+         <a href="#" class="btn btn-warning" id="favoriteBtn" onclick="toggleFavorite(paper.id)">
+            <i class="fas fa-star" id="favoriteIcon"></i> Favorite
+        </a>
         <!-- Display comments section -->
         <div class="comments-section mt-4">
             <h3>Comments</h3>
@@ -53,6 +58,28 @@
             alert("Your comment has been posted!");
         }, 1000);
     });
+    function toggleFavorite(paperId) {
+    // Send an AJAX request to mark/unmark as favorite
+    fetch(`/toggle_favorite/${paperId}/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            },
+            body: JSON.stringify({ "paper_id": paperId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const starIcon = document.getElementById('favoriteIcon');
+            if (data.favorited) {
+                starIcon.classList.add('fas');
+                starIcon.classList.remove('far');
+            } else {
+                starIcon.classList.remove('fas');
+                starIcon.classList.add('far');
+            }
+        });
+    }
     </script>
 </body>
 </html>

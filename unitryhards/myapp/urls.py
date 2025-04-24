@@ -2,6 +2,8 @@ from django.urls import path
 from myapp import views
 from django.contrib.auth import views as auth_views
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('signup/', views.signup_view, name='signup'),
@@ -14,4 +16,8 @@ urlpatterns = [
     path('course_selection/<int:university_id>/<int:department_id>/', views.course_selection_view, name='course_selection'),
     path('papers/<int:department_id>/<int:course_id>/', views.papers_view, name='papers'),  # Shows all papers for a course
     path('papers/<int:department_id>/<int:course_id>/<int:paper_id>/', views.paper_detail_view, name='paper_detail'),  # Shows detailed view of a single paper
+    path('toggle_favorite/<int:paper_id>/', views.toggle_favorite, name='toggle_favorite')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
