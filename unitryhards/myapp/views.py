@@ -124,4 +124,5 @@ def paper_detail_view(request, department_id, course_id, paper_id):
         'paper': paper,
         'form': form,
         'comments': comments,
+        'file_url': paper.file.url
     })

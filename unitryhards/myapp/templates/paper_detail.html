@@ -14,6 +14,8 @@
         <p>{{ paper.description }}</p>
         <!-- Link to view the paper -->
         <a href="{% url 'paper_detail' department_id=department.id course_id=course.id paper_id=paper.id %}" class="btn btn-primary">View Paper</a>
+        <!-- Download Button -->
+         <a href="{{ paper.file_url }}" download class="btn btn-success">Download Paper</a>
         <!-- Display comments section -->
         <div class="comments-section mt-4">
             <h3>Comments</h3>
