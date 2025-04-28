@@ -1,0 +1,592 @@
+/* Κεντράρισμα του login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ύψος ίσο με το ύψος της οθόνης */
+    margin: 0;
+  }
+  
+/* Κοινό στυλ για login-box και signup-box */
+.login-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Μεσαίο προς μεγάλο πλάτος */
+  height: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+  
+  /* Στυλ για τον τίτλο */
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  /* Στυλ για τα πεδία εισαγωγής */
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Για να υπολογίζεται σωστά το padding */
+  }
+  
+  /* Στυλ για το κουμπί Login */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  p {
+    margin-top: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #4CAF50;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+/* Home screen */
+/* General Body Styling */
+body {
+  background-color: #f4f9f4; /* Light green background */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Home Container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(45deg, #4CAF50, #81C784); /* Beautiful gradient background */
+  color: white;
+}
+
+/* Large Heading for Welcome */
+.home-header h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Subtitle under Welcome */
+.home-header .subtitle {
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Description Style */
+.home-header .description {
+  font-size: 20px;
+  max-width: 700px;
+  color: #f4f4f4;
+  margin: 0 auto 30px;
+}
+
+/* Dropdown Menu (Top Right) */
+.dropdown-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #4CAF50; /* Light green background */
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-btn:hover {
+  background-color: #45a049;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: #4CAF50;
+}
+
+.dropdown-container:hover .dropdown-content {
+  display: block;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2f2f2f;
+}
+
+.profile-header p {
+  font-size: 18px;
+  color: #777;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-pic {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #2d8b34;
+}
+
+.profile-pic button {
+  margin-top: 10px;
+  background-color: #2d8b34;
+  color: white;
+}
+
+.profile-details {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.profile-details h2 {
+  font-size: 24px;
+  color: #2d8b34;
+}
+
+.profile-details p {
+  font-size: 16px;
+  color: #333;
+}
+
+.profile-details button {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.password-change {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.password-change h2 {
+  font-size: 22px;
+  color: #FF9800;
+}
+
+.password-change button {
+  margin-top: 20px;
+  background-color: #FF9800;
+  color: white;
+}
+
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7; /* Light gray background for the page */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Styling */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Profile Box Styling */
+.profile-box {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+/* Profile Header */
+.profile-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2d8b34; /* Green color for the header */
+}
+
+.profile-header p {
+  font-size: 18px;
+  color: #777;
+}
+
+/* Profile Picture Styling */
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #2d8b34; /* Green border for profile picture */
+}
+
+/* Button Styles */
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* Edit Profile and Change Password Buttons */
+.profile-details button,
+.password-change button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profile-details button:hover,
+.password-change button:hover {
+  background-color: #45a049;
+}
+
+/* Logout Button */
+.logout-section button {
+  background-color: #FF5733;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.logout-section button:hover {
+  background-color: #d4422b;
+}
+
+/* Personal Information Section Styling */
+.profile-details h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.profile-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-details li {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* General container styling */
+.profile-pic, .profile-details, .password-change, .logout-section {
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments for smaller screen sizes */
+@media (max-width: 768px) {
+  .profile-box {
+      padding: 20px;
+  }
+
+  .profile-header h2 {
+      font-size: 28px;
+  }
+
+  .profile-header p {
+      font-size: 16px;
+  }
+}
+
+/* University Page */
+.university-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4CAF50;
+}
+
+.university-page .container {
+  width: 60%;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Department Page */
+.department-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4CAF50;
+}
+
+.department-page .container {
+  width: 70%;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Papers Page */
+.papers-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4CAF50;
+}
+
+.papers-page .container {
+  width: 70%;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Universal Styling for Dropdown and Forms (This will be applied to all three pages) */
+.container select,
+.container button {
+  font-size: 18px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* University Page Select Dropdown */
+.university-page select {
+  width: 60%;
+}
+
+/* Department Page Select Dropdown */
+.department-page select {
+  width: 65%;
+}
+
+/* Papers Page Select Dropdown */
+.papers-page select {
+  width: 65%;
+}
+
+/* Button Styling */
+.container button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container button:hover {
+  background-color: #45a049;
+}
+
+/* Centering the content */
+.university-page .container,
+.department-page .container,
+.papers-page .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Comment Section Title */
+.comments-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Add Comment Title */
+.add-comment-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Stylish Textarea for Comments */
+.comment-input {
+  width: 100%; /* Made the comment input field as wide as the form */
+  max-width: 600px; /* Setting a max width to prevent it from getting too wide on larger screens */
+  padding: 12px 15px; /* Adjusted padding for better spacing */
+  border: 2px solid #45a049;
+  border-radius: 8px;
+  font-size: 1.1em;
+  resize: none;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-input:focus {
+  border-color: #00c4cc;
+  box-shadow: 0 0 5px rgba(0, 196, 204, 0.3);
+  outline: none;
+}
+
+/* Button Styling */
+.btn-submit {
+  padding: 8px 30px;
+    background-color: #00c4cc;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.btn-submit:hover {
+  background-color: #00b3b0;
+}
+
+/* Comment List Styling */
+.comments-list {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.comment-item {
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.comment-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Styling the comment text */
+.comment-text {
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+/* No Comments Text */
+.no-comments {
+  font-size: 1.2em;
+  color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .comment-form {
+      width: 100%;
+      padding: 0 20px;
+  }
+  
+  .comment-input {
+      font-size: 1em;
+  }
+
+  .btn-submit {
+      font-size: 1.1em;
+  }
+}
+
+/* Comment Section */
+textarea.comment-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  font-size: 1.1em;
+}
+
+/* For the buttons */
+.btn {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
