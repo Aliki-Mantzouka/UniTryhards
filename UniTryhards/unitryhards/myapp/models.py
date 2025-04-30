@@ -28,6 +28,14 @@ class Course(models.Model):
 class Paper(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(default="No description available")
+
+    CATEGORY_CHOICES = [
+    ('notes', 'Notes'),
+    ('exams', 'Past Exam Questions'),
+    ('general', 'General'),
+]
+    category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default='general')
+
     file = models.FileField(upload_to='papers/')  # Folder where the papers will be stored
     course = models.ForeignKey(Course, related_name='papers', on_delete=models.CASCADE)
     uploaded_at = models.DateTimeField(auto_now_add=True)

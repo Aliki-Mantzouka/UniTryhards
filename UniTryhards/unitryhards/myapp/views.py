@@ -6,7 +6,9 @@ from django.http import HttpResponse
 from django.contrib.auth.views import LoginView, LogoutView
 from .models import University, Department, Course, Paper, Comment, FavoritePaper
 from .forms import CommentForm
+from .forms import PaperUploadForm
 from django.http import JsonResponse
+from django.contrib import messages
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
@@ -153,3 +155,15 @@ def toggle_favorite(request, paper_id):
         favorited = True
 
     return JsonResponse({'favorited': favorited})
+
+@login_required
+def upload_paper_view(request):
+    if request.method == 'POST':
+        form = PaperUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Paper uploaded successfully.")
+            return redirect('home')  # or anywhere else
+    else:
+        form = PaperUploadForm()
+    return render(request, 'upload_paper.html', {'form': form})

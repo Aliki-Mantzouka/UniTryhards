@@ -16,7 +16,8 @@ urlpatterns = [
     path('course_selection/<int:university_id>/<int:department_id>/', views.course_selection_view, name='course_selection'),
     path('papers/<int:department_id>/<int:course_id>/', views.papers_view, name='papers'),  # Shows all papers for a course
     path('papers/<int:department_id>/<int:course_id>/<int:paper_id>/', views.paper_detail_view, name='paper_detail'),  # Shows detailed view of a single paper
-    path('toggle_favorite/<int:paper_id>/', views.toggle_favorite, name='toggle_favorite')
+    path('toggle_favorite/<int:paper_id>/', views.toggle_favorite, name='toggle_favorite'),
+    path('upload/', views.upload_paper_view, name='upload_paper')
 ]
 
 if settings.DEBUG:
