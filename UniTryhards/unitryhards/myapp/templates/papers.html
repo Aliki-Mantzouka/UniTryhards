@@ -14,6 +14,12 @@
             <a href="{% url 'upload_paper' %}" class="btn btn-success">Upload Paper</a>
         </div> 
         <h2 class="text-center">Available Papers for {{ course.name }}</h2>
+        <div class="d-flex justify-content-end mb-3">
+            <a href="{% url 'papers' department_id=department.id course_id=course.id %}" class="btn btn-outline-primary me-2">All</a>
+            <a href="{% url 'papers_by_category' department_id=department.id course_id=course.id category='notes' %}" class="btn btn-outline-primary me-2">Notes</a>
+            <a href="{% url 'papers_by_category' department_id=department.id course_id=course.id category='exams' %}" class="btn btn-outline-primary me-2">Past Exam Questions</a>
+            <a href="{% url 'papers_by_category' department_id=department.id course_id=course.id category='general' %}" class="btn btn-outline-primary">General</a>
+        </div>        
         <div class="paper-list mt-4">
             <form method="POST" action="{% url 'papers' department_id=department.id course_id=course.id %}">
                 {% csrf_token %}

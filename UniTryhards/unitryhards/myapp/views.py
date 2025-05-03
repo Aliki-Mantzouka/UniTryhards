@@ -102,6 +102,16 @@ def papers_view(request, department_id, course_id):
         'papers': papers,
     })
 
+def papers_by_category_view(request, department_id, course_id, category):
+    department = get_object_or_404(Department, id=department_id)
+    course = get_object_or_404(Course, id=course_id)
+    papers = Paper.objects.filter(course=course, category=category)
+    return render(request, 'papers.html', {
+        'department': department,
+        'course': course,
+        'papers': papers,
+        'selected_category': category,  # Optional: to highlight selected filter
+    })
 
 def paper_detail_view(request, department_id, course_id, paper_id):
     # Get the specific paper based on the paper_id
