@@ -100,6 +100,7 @@ def papers_view(request, department_id, course_id):
         'department': department,
         'course': course,
         'papers': papers,
+        'current_category': 'all'
     })
 
 def papers_by_category_view(request, department_id, course_id, category):
@@ -110,7 +111,7 @@ def papers_by_category_view(request, department_id, course_id, category):
         'department': department,
         'course': course,
         'papers': papers,
-        'selected_category': category,  # Optional: to highlight selected filter
+        'current_category': category  # Optional: to highlight selected filter
     })
 
 def paper_detail_view(request, department_id, course_id, paper_id):
