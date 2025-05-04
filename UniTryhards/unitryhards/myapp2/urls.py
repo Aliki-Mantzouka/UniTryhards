@@ -1,5 +1,5 @@
 from django.urls import path
-from myapp import views
+from myapp2 import views
 from django.contrib.auth import views as auth_views
 from . import views
 from django.conf import settings
@@ -15,8 +15,10 @@ urlpatterns = [
     path('department/<int:university_id>/', views.department_view, name='department'),  # Department selection
     path('course_selection/<int:university_id>/<int:department_id>/', views.course_selection_view, name='course_selection'),
     path('papers/<int:department_id>/<int:course_id>/', views.papers_view, name='papers'),  # Shows all papers for a course
+    path('papers/<int:department_id>/<int:course_id>/category/<str:category>/', views.papers_by_category_view, name='papers_by_category'),
     path('papers/<int:department_id>/<int:course_id>/<int:paper_id>/', views.paper_detail_view, name='paper_detail'),  # Shows detailed view of a single paper
-    path('toggle_favorite/<int:paper_id>/', views.toggle_favorite, name='toggle_favorite')
+    path('toggle_favorite/<int:paper_id>/', views.toggle_favorite, name='toggle_favorite'),
+    path('upload/', views.upload_paper_view, name='upload_paper')
 ]
 
 if settings.DEBUG:
