@@ -139,8 +139,8 @@ body {
   color: #4CAF50;
 }
 
-.dropdown-container:hover .dropdown-content {
-  display: block;
+.dropdown-content.show {
+  display: block; /* Makes the dropdown visible */
 }
 
 .container {

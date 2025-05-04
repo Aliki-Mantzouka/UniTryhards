@@ -16,8 +16,9 @@
   <body>
     <!-- Dropdown Menu (Top Right) -->
     <div class="dropdown-container">
-      <button class="dropdown-btn">Menu</button>
-      <div class="dropdown-content">
+      <button class="dropdown-btn" id="menu-toggle">Menu</button>
+      <div class="dropdown-content" id="dropdown-menu">
+        <a href="{% url 'home' %}" class="dropdown-item">Home</a>
         <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
         <a href="{% url 'university' %}" class="dropdown-item">University Selection</a>
         <a href="#" class="dropdown-item">Settings</a>
@@ -41,5 +42,20 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     ></script>
+    <script>
+      const toggleBtn = document.getElementById('menu-toggle');
+      const dropdown = document.getElementById('dropdown-menu');
+    
+      toggleBtn.addEventListener('click', function () {
+        dropdown.classList.toggle('show');
+      });
+    
+      // Hide menu if clicking outside
+      window.addEventListener('click', function (e) {
+        if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.remove('show');
+        }
+      });
+    </script>    
   </body>
 </html>
