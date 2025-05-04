@@ -1,3 +1,10 @@
+body {
+  background-color: #f7f7f7; /* or the color you want */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 /* Κεντράρισμα του login container */
 .login-container {
     display: flex;
@@ -64,15 +71,6 @@
     text-decoration: underline;
   }
 
-/* Home screen */
-/* General Body Styling */
-body {
-  background-color: #f4f9f4; /* Light green background */
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 /* Main Home Container */
 .home-container {
   display: flex;
@@ -116,21 +114,6 @@ body {
   display: inline-block;
 }
 
-.dropdown-btn {
-  background-color: #4CAF50; /* Light green background */
-  color: white;
-  padding: 12px 20px;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-btn:hover {
-  background-color: #45a049;
-}
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -158,11 +141,6 @@ body {
 
 .dropdown-container:hover .dropdown-content {
   display: block;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f7f7f7;
 }
 
 .container {
@@ -245,14 +223,6 @@ body {
   margin-top: 20px;
   background-color: #FF9800;
   color: white;
-}
-
-/* General Body Styling */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f7f7f7; /* Light gray background for the page */
-  margin: 0;
-  padding: 0;
 }
 
 /* Container Styling */
@@ -589,4 +559,21 @@ textarea.comment-input {
 .btn-success {
   background-color: #28a745;
   color: white;
+}
+
+.dropdown-btn {
+  background-color: white;       /* White background */
+  color: #4CAF50;                /* Green text */
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid #4CAF50;     /* Optional: add a green border */
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-btn:hover {
+  background-color: #f1f1f1; /* Light gray on hover */
+  color: #388E3C;            /* Slightly darker green text */
 }
