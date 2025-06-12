@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView, LogoutView
-from .models import University, Department, Course, Paper, Comment, FavoritePaper
+from .models import University, Department, Course, Paper, Comment, FavoritePaper, PaperReport
 from .forms import CommentForm
 from .forms import PaperUploadForm
 from django.http import JsonResponse
@@ -178,3 +178,38 @@ def upload_paper_view(request):
     else:
         form = PaperUploadForm()
     return render(request, 'upload_paper.html', {'form': form})
+
+# Report Parer View OLD VERSION!!!
+
+#def report_paper(request, paper_id):
+ #   paper = get_object_or_404(Paper, id=paper_id)
+
+  #  if request.method == 'POST':
+   #     reason = request.POST.get('reason')
+    #    user = request.user if request.user.is_authenticated else None
+
+     #   PaperReport.objects.create(paper=paper, user=user, reason=reason)
+
+      #  return redirect(
+       #     'paper_detail',
+        #    department_id=paper.course.department.id,
+         #   course_id=paper.course.id,
+          #  paper_id=paper.id
+        #)
+
+# Report Paper View
+def report_paper(request, paper_id):
+    paper = get_object_or_404(Paper, id=paper_id)
+
+    if request.method == 'POST':
+        reason = request.POST.get('reason')
+        user = request.user if request.user.is_authenticated else None
+
+        PaperReport.objects.create(paper=paper, user=user, reason=reason)
+
+        return redirect(
+            'paper_detail',
+            department_id=paper.course.department.id,
+            course_id=paper.course.id,
+            paper_id=paper.id
+        )

@@ -64,3 +64,23 @@ class FavoritePaper(models.Model):
 
     class Meta:
         unique_together = ('user', 'paper')
+
+# Paper Report Model OLD VERSION!!!
+#class PaperReport(models.Model):
+ #   user = models.ForeignKey(User, on_delete=models.CASCADE)
+  #  paper = models.ForeignKey('Paper', on_delete=models.CASCADE)
+   # reason = models.TextField(blank=True)
+    #reported_at = models.DateTimeField(auto_now_add=True)
+
+#    def __str__(self):
+ #       return f"Report by {self.user.username} on Paper ID {self.paper.id}"
+
+# Paper Report Model
+class PaperReport(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    paper = models.ForeignKey('Paper', on_delete=models.CASCADE)
+    reason = models.TextField(blank=True)
+    reported_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Report by {self.user.username} on Paper ID {self.paper.id}"

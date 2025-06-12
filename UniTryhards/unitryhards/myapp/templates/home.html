@@ -14,14 +14,13 @@
     />
   </head>
   <body>
-    <!-- Dropdown Menu (Top Right) -->
+    <!-- Dropdown Menu -->
     <div class="dropdown-container">
       <button class="dropdown-btn" id="menu-toggle">Menu</button>
       <div class="dropdown-content" id="dropdown-menu">
         <a href="{% url 'home' %}" class="dropdown-item">Home</a>
         <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
         <a href="{% url 'university' %}" class="dropdown-item">University Selection</a>
-        <a href="#" class="dropdown-item">Settings</a>
         <a href="{% url 'login' %}" class="dropdown-item">Logout</a>
       </div>
     </div>
