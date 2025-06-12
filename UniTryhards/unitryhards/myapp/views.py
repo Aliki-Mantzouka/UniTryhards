@@ -179,24 +179,6 @@ def upload_paper_view(request):
         form = PaperUploadForm()
     return render(request, 'upload_paper.html', {'form': form})
 
-# Report Parer View OLD VERSION!!!
-
-#def report_paper(request, paper_id):
- #   paper = get_object_or_404(Paper, id=paper_id)
-
-  #  if request.method == 'POST':
-   #     reason = request.POST.get('reason')
-    #    user = request.user if request.user.is_authenticated else None
-
-     #   PaperReport.objects.create(paper=paper, user=user, reason=reason)
-
-      #  return redirect(
-       #     'paper_detail',
-        #    department_id=paper.course.department.id,
-         #   course_id=paper.course.id,
-          #  paper_id=paper.id
-        #)
-
 # Report Paper View
 def report_paper(request, paper_id):
     paper = get_object_or_404(Paper, id=paper_id)
