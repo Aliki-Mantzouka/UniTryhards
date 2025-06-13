@@ -596,3 +596,27 @@ textarea.comment-input {
   margin-left: 0; /* align flush to left edge, adjust if needed */
   padding-left: 0; /* remove default padding if any */
 }
+
+.discord-link-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5865F2; /* Discord's blurple */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.discord-link-container a {
+  color: white;
+  text-decoration: none;
+}
+
+.discord-link-container:hover {
+  background-color: #4752C4;
+}
