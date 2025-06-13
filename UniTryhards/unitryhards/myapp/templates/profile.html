@@ -38,15 +38,21 @@
                         <button class="btn btn-primary">Edit Profile</button>
                     </div>
                     <!-- Favorite Papers Section -->
-                    <div class="favorite-papers mt-4">
+                     <div class="favorite-papers mt-4">
                         <h3>Favorite Papers</h3>
+                        {% if user.userprofile.favorite_papers.exists %}
                         <ul>
-                            {% for favorite in user.favoritepaper_set.all %}
-                            <li>{{ favorite.paper.title }}</li>
-                            {% empty %}
-                            <li>No favorite papers yet</li>
+                            {% for paper in user.userprofile.favorite_papers.all %}
+                            <li>
+                                <a href="{% url 'paper_detail' paper.course.department.id paper.course.id paper.id %}">
+                                    {{ paper.title }}
+                                </a>
+                            </li>
                             {% endfor %}
                         </ul>
+                        {% else %}
+                        <p>No favorite papers yet</p>
+                        {% endif %}
                     </div>
                     <!-- Change Password Section -->
                     <div class="password-change mt-4">

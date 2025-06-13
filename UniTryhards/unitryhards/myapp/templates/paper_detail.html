@@ -14,16 +14,34 @@
     <div class="container mt-5">
         <h2>{{ paper.title }}</h2>
         <p>{{ paper.description }}</p>
-        <!-- Link to view the paper -->
-        <a href="{% url 'paper_detail' department_id=department.id course_id=course.id paper_id=paper.id %}" class="btn btn-primary">View Paper</a>
-        <!-- Download Button -->
-         <a href="{{ paper.file_url }}" download class="btn btn-success">Download Paper</a>
-         <a href="#" class="btn btn-warning" id="favoriteBtn" onclick="toggleFavorite(paper.id)">
-            <i class="fas fa-star" id="favoriteIcon"></i> Favorite
+        <div class="button-row">
+        <!-- View Paper Button -->
+        <a href="{% url 'paper_detail' department_id=department.id course_id=course.id paper_id=paper.id %}" class="btn btn-primary btn-sm underline-shadow" style="width: auto; padding: 0.25rem 0.5rem; background-color: #007bff; color: white; border: 1px solid #007bff;">
+            <i class="fas fa-eye"></i> View Paper
         </a>
-        <!-- Report Button -->
-         <button class="btn btn-danger" data-toggle="modal" data-target="#reportModal">Report</button>
-         
+        <!-- Download Paper Button -->
+        <a href="{{ paper.file_url }}" download class="btn btn-success btn-sm underline-shadow" style="width: auto; padding: 0.25rem 0.5rem; background-color: #28a745; color: white; border: 1px solid #28a745;">
+            <i class="fas fa-download"></i> Download Paper
+        </a>
+        <!-- Favorite Paper Button-->
+        <form method="post" action="{% url 'toggle_favorite_paper' paper.id %}">
+            {% csrf_token %}
+            {% if paper in user.userprofile.favorite_papers.all %}
+            <button type="submit" class="btn btn-warning btn-sm underline-shadow" style="width: auto; padding: 0.25rem 0.5rem; background-color: gold; color: black;">
+                <i class="fas fa-star"></i> Unfavorite
+            </button>
+            {% else %}
+            <button type="submit" class="btn btn-warning btn-sm" style="width: auto; padding: 0.25rem 0.5rem; background-color: gold; color: black;">
+                <i class="far fa-star"></i> Favorite
+            </button>
+            {% endif %}
+        </form>
+
+        <!-- Report Paper Button -->
+        <button class="btn btn-danger btn-sm underline-shadow" data-toggle="modal" data-target="#reportModal" style="width: auto; padding: 0.25rem 0.5rem; background-color: red; color: white; border: 1px solid red;">
+            <i class="fas fa-flag"></i> Report Paper
+        </button>
+ 
         <!-- Report Modal -->
         <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -47,7 +65,7 @@
                 </form>
             </div>
         </div>
-
+        </div>
         <!-- Display comments section -->
         <div class="comments-section mt-4">
             <h3>Comments</h3>
@@ -61,14 +79,15 @@
             {% else %}
                 <p>No comments yet. Be the first to comment!</p>
             {% endif %}
+
             <!-- Comment form -->
             <h4>Add a Comment</h4>
             <form method="POST" class="comment-form">
                 {% csrf_token %}
                 <div class="comment-container">
-                    <textarea class="comment-input" placeholder="Write your comment..."></textarea>
+                    <textarea name="content" class="comment-input" placeholder="Write your comment..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Submit</button>
+                <button type="submit" class="btn-submit underline-shadow" style="width: auto; padding: 0.25rem 0.5rem;">Submit</button>
             </form>
         </div>
     </div>
@@ -85,28 +104,28 @@
             alert("Your comment has been posted!");
         }, 1000);
     });
-    function toggleFavorite(paperId) {
+    //function toggleFavorite(paperId) {
     // Send an AJAX request to mark/unmark as favorite
-    fetch(`/toggle_favorite/${paperId}/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
-            },
-            body: JSON.stringify({ "paper_id": paperId })
-        })
-        .then(response => response.json())
-        .then(data => {
-            const starIcon = document.getElementById('favoriteIcon');
-            if (data.favorited) {
-                starIcon.classList.add('fas');
-                starIcon.classList.remove('far');
-            } else {
-                starIcon.classList.remove('fas');
-                starIcon.classList.add('far');
-            }
-        });
-    }
+    //fetch(`/toggle_favorite/${paperId}/`, {
+           // method: 'POST',
+            //headers: {
+              //  'Content-Type': 'application/json',
+                //'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+           // },
+            //body: JSON.stringify({ "paper_id": paperId })
+       // })
+        //.then(response => response.json())
+       // .then(data => {
+         //   const starIcon = document.getElementById('favoriteIcon');
+           // if (data.favorited) {
+             //   starIcon.classList.add('fas');
+               // starIcon.classList.remove('far');
+            //} else {
+             //   starIcon.classList.remove('fas');
+               // starIcon.classList.add('far');
+            //}
+       // });
+   // }
     </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

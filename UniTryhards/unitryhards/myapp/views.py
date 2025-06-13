@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView, LogoutView
-from .models import University, Department, Course, Paper, Comment, FavoritePaper, PaperReport
+from .models import University, Department, Course, Paper, Comment, FavoritePaper, PaperReport, UserProfile
 from .forms import CommentForm
 from .forms import PaperUploadForm
 from django.http import JsonResponse
@@ -126,8 +126,8 @@ def paper_detail_view(request, department_id, course_id, paper_id):
         form = CommentForm(request.POST)
         if form.is_valid():
             new_comment = form.save(commit=False)
-            new_comment.paper = paper  # Associate the comment with the paper
-            new_comment.user = request.user  # Associate the comment with the current user
+            new_comment.paper = paper
+            new_comment.user = request.user
             new_comment.save()
             return redirect('paper_detail', department_id=department_id, course_id=course_id, paper_id=paper_id)
         if 'favorite' in request.POST:
@@ -148,24 +148,6 @@ def paper_detail_view(request, department_id, course_id, paper_id):
         'comments': comments,
         'file_url': paper.file.url
     })
-
-@login_required
-def toggle_favorite(request, paper_id):
-    paper = Paper.objects.get(id=paper_id)
-    user = request.user
-
-    # Check if the paper is already favorited by the user
-    favorite, created = FavoritePaper.objects.get_or_create(user=user, paper=paper)
-
-    if not created:
-        # If it's already a favorite, remove it
-        favorite.delete()
-        favorited = False
-    else:
-        # If it's not a favorite, add it
-        favorited = True
-
-    return JsonResponse({'favorited': favorited})
 
 @login_required
 def upload_paper_view(request):
@@ -195,3 +177,21 @@ def report_paper(request, paper_id):
             course_id=paper.course.id,
             paper_id=paper.id
         )
+
+# Favourite Paper View
+@login_required
+def toggle_favorite_paper(request, paper_id):
+    paper = get_object_or_404(Paper, id=paper_id)
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
+    if paper in user_profile.favorite_papers.all():
+        user_profile.favorite_papers.remove(paper)
+    else:
+        user_profile.favorite_papers.add(paper)
+
+    return redirect(
+        'paper_detail',
+        department_id=paper.course.department.id,
+        course_id=paper.course.id,
+        paper_id=paper.id
+    )

@@ -577,3 +577,22 @@ textarea.comment-input {
   background-color: #f1f1f1; /* Light gray on hover */
   color: #388E3C;            /* Slightly darker green text */
 }
+
+.underline-shadow {
+  text-decoration: underline;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.underline-shadow:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  justify-content: flex-start; /* align left */
+  align-items: center; /* vertical center */
+  margin-left: 0; /* align flush to left edge, adjust if needed */
+  padding-left: 0; /* remove default padding if any */
+}
