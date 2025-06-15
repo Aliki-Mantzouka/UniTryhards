@@ -35,7 +35,7 @@
                         <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle"
                             style="width: 150px; height: 150px;">
                         <br>
-                        <button class="btn btn-secondary mt-3">Change Picture</button>
+                        <button class="btn btn-secondary mt-3" style="width: auto; padding: 0.25rem 0.5rem;">Change Picture</button>
                     </div>
                     <!-- Personal Information Section -->
                     <div class="profile-details mt-4">
@@ -45,7 +45,7 @@
                             <li><strong>Email:</strong> {{ user.email }}</li>
                             <li><strong>Phone:</strong> {{ user.profile.phone }}</li>
                         </ul>
-                        <button class="btn btn-primary">Edit Profile</button>
+                        <button class="btn btn-primary" style="width: auto; padding: 0.25rem 0.5rem;">Edit Profile</button>
                     </div>
                     <!-- Favorite Papers Section -->
                      <div class="favorite-papers mt-4">
@@ -65,9 +65,22 @@
                         {% endif %}
                     </div>
                     <!-- Change Password Section -->
-                    <div class="password-change mt-4">
+                     <div class="password-change mt-4">
                         <h3>Change Password</h3>
-                        <button class="btn btn-warning">Change Password</button>
+                        <!-- Change Password Button -->
+                         <form method="get" action="{% url 'change_password' %}">
+                            <button type="submit" class="btn btn-warning btn-sm px-2" style="width: auto; padding: 0.25rem 0.5rem;">Change Password</button>
+                        </form>
+                        <!-- Password Change Form -->
+                         {% if show_password_form %}
+                         <hr>
+                         <h4>Change Your Password</h4>
+                         <form method="post">
+                            {% csrf_token %}
+                            {{ password_form.as_p }}
+                            <button type="submit" class="btn btn-primary" style="width: auto; padding: 0.25rem 0.5rem;">Save New Password</button>
+                        </form>
+                        {% endif %}
                     </div>
                     <!-- Logout Section -->
                     <div class="logout-section mt-4 text-center">

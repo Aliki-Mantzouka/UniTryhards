@@ -20,7 +20,8 @@ urlpatterns = [
     path('upload/', views.upload_paper_view, name='upload_paper'),
     path('papers/<int:department_id>/<int:course_id>/<int:paper_id>/', views.paper_detail_view, name='paper_detail'),
     path('papers/<int:paper_id>/report/', views.report_paper, name='report_paper'),
-    path('papers/<int:paper_id>/toggle_favorite/', views.toggle_favorite_paper, name='toggle_favorite_paper')
+    path('papers/<int:paper_id>/toggle_favorite/', views.toggle_favorite_paper, name='toggle_favorite_paper'),
+    path('change-password/', views.change_password, name='change_password')
 ]
 
 if settings.DEBUG:

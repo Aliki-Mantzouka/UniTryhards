@@ -9,6 +9,8 @@ from .forms import CommentForm
 from .forms import PaperUploadForm
 from django.http import JsonResponse
 from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
@@ -195,3 +197,16 @@ def toggle_favorite_paper(request, paper_id):
         course_id=paper.course.id,
         paper_id=paper.id
     )
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            return redirect('profile')
+    else:
+        form = PasswordChangeForm(user=request.user)
+
+    return render(request, 'profile.html', {'password_form': form, 'show_password_form': True})
