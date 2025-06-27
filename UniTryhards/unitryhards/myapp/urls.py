@@ -21,6 +21,8 @@ urlpatterns = [
     path('papers/<int:department_id>/<int:course_id>/<int:paper_id>/', views.paper_detail_view, name='paper_detail'),
     path('papers/<int:paper_id>/report/', views.report_paper, name='report_paper'),
     path('papers/<int:paper_id>/toggle_favorite/', views.toggle_favorite_paper, name='toggle_favorite_paper'),
+    path('paper/<int:paper_id>/view/', views.view_paper, name='view_paper'),
+    path('paper/<int:paper_id>/download/', views.download_paper, name='download_paper'),
     path('change-password/', views.change_password, name='change_password')
 ]
 

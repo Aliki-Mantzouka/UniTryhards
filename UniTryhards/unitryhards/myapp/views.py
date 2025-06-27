@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404, FileResponse
 from django.contrib.auth.views import LoginView, LogoutView
 from .models import University, Department, Course, Paper, Comment, FavoritePaper, PaperReport, UserProfile
 from .forms import CommentForm
@@ -11,6 +11,7 @@ from django.http import JsonResponse
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+import os
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
@@ -210,3 +211,20 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
 
     return render(request, 'profile.html', {'password_form': form, 'show_password_form': True})
+
+def view_paper(request, paper_id):
+    try:
+        paper = Paper.objects.get(pk=paper_id)
+        return FileResponse(paper.file.open(), content_type='application/pdf')
+    except Paper.DoesNotExist:
+        raise Http404("Paper not found.")
+
+def download_paper(request, paper_id):
+    try:
+        paper = Paper.objects.get(pk=paper_id)
+        file_path = paper.file.path
+        response = FileResponse(open(file_path, 'rb'))
+        response['Content-Disposition'] = f'attachment; filename="{os.path.basename(file_path)}"'
+        return response
+    except Paper.DoesNotExist:
+        raise Http404("Paper not found.")
