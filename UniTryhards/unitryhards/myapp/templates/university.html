@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pick Your University</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KYXE2J5mJw2PqVqQ4dUn1DplS9wW8I8VqMl5FJYxg16b8db5eGgqYlSRX6XtPb51" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body.selection-page {
+            background: linear-gradient(to right, #e8f5e9, #c8e6c9);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .selection-card {
+            background-color: #ffffff;
+            border: 2px solid #a5d6a7;
+            border-radius: 15px;
+            padding: 30px;
+            width: 60%;
+            box-shadow: 0 8px 16px rgba(76, 175, 80, 0.2);
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #388e3c;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #81c784;
+        }
+
+    </style>
 </head>
-<body class="university-page">
+<body class="selection-page">
     <!-- Dropdown Menu -->
     <div class="dropdown-container">
       <button class="dropdown-btn" id="menu-toggle">Menu</button>
@@ -21,39 +52,37 @@
     </div>
     <!-- Main University Selection Container -->
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="card shadow p-3 mb-5" style="width: 50%;">
-            <div class="card-body text-center">
-                <h2>Pick Your University</h2>
-                <form method="POST" action="{% url 'university' %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="university">Choose University:</label>
-                        <select name="university">
-                            {% for university in universities %}
-                                <option value="{{ university.id }}">{{ university.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-success mt-3">Next</button>
-                </form>
-            </div>
+        <div class="selection-card">
+            <h2 class="text-center">Pick Your University</h2>
+            <form method="POST" action="{% url 'university' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="university">Choose University:</label>
+                    <select name="university" class="form-control">
+                        {% for university in universities %}
+                            <option value="{{ university.id }}">{{ university.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success mt-4 w-100">Next</button>
+            </form>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      const toggleBtn = document.getElementById('menu-toggle');
-      const dropdown = document.getElementById('dropdown-menu');
-    
-      toggleBtn.addEventListener('click', function () {
-        dropdown.classList.toggle('show');
-      });
-    
-      // Hide menu if clicking outside
-      window.addEventListener('click', function (e) {
-        if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
-          dropdown.classList.remove('show');
-        }
-      });
+        const toggleBtn = document.getElementById('menu-toggle');
+        const dropdown = document.getElementById('dropdown-menu');
+
+        toggleBtn.addEventListener('click', function () {
+            dropdown.classList.toggle('show');
+        });
+
+        window.addEventListener('click', function (e) {
+            if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
