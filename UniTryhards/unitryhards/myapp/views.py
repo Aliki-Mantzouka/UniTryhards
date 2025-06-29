@@ -159,7 +159,7 @@ def upload_paper_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Paper uploaded successfully.")
-            return redirect('home')  # or anywhere else
+            return redirect('home')
     else:
         form = PaperUploadForm()
     return render(request, 'upload_paper.html', {'form': form})
