@@ -25,3 +25,10 @@ class PaperUploadForm(forms.ModelForm):
     class Meta:
         model = Paper
         fields = ['title', 'description', 'file', 'category', 'course']
+
+class EditProfileForm(forms.ModelForm):
+    bio = forms.CharField(widget=forms.Textarea, required=False)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']

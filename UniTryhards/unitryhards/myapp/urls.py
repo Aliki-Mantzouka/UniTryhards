@@ -23,6 +23,7 @@ urlpatterns = [
     path('papers/<int:paper_id>/toggle_favorite/', views.toggle_favorite_paper, name='toggle_favorite_paper'),
     path('paper/<int:paper_id>/view/', views.view_paper, name='view_paper'),
     path('paper/<int:paper_id>/download/', views.download_paper, name='download_paper'),
+    path('edit-profile/', views.edit_profile, name='edit_profile'),
     path('change-password/', views.change_password, name='change_password')
 ]
 

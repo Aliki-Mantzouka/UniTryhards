@@ -36,9 +36,9 @@
                         <ul class="list-unstyled">
                             <li><strong>Username:</strong> {{ user.username }}</li>
                             <li><strong>Email:</strong> {{ user.email }}</li>
-                            <li><strong>Phone:</strong> {{ user.profile.phone }}</li>
+                            <li><strong>Bio:</strong> {{ user.profile.bio }}</li>
                         </ul>
-                        <button class="btn btn-primary" style="width: auto; padding: 0.25rem 0.5rem;">Edit Profile</button>
+                        <a href="{% url 'edit_profile' %}" class="btn btn-primary" style="width: auto; padding: 0.25rem 0.5rem;">Edit Profile</a>
                     </div>
                     <!-- Favorite Papers Section -->
                      <div class="favorite-papers mt-4">

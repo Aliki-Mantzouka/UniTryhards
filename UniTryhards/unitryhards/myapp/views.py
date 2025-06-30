@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, FileResponse
 from django.contrib.auth.views import LoginView, LogoutView
 from .models import University, Department, Course, Paper, Comment, FavoritePaper, PaperReport, UserProfile
-from .forms import CommentForm
+from .forms import CommentForm, EditProfileForm
 from .forms import PaperUploadForm
 from django.http import JsonResponse
 from django.contrib import messages
@@ -228,3 +228,21 @@ def download_paper(request, paper_id):
         return response
     except Paper.DoesNotExist:
         raise Http404("Paper not found.")
+    
+@login_required
+def edit_profile(request):
+    user = request.user
+    profile = user.userprofile  # <-- this is the correct way for your case
+
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            profile.bio = form.cleaned_data['bio']
+            profile.save()
+            return redirect('profile')
+    else:
+        form = EditProfileForm(instance=user)
+        form.fields['bio'].initial = profile.bio
+
+    return render(request, 'myapp/edit_profile.html', {'form': form})
