@@ -38,7 +38,11 @@
                             <li><strong>Email:</strong> {{ user.email }}</li>
                             <li><strong>Bio:</strong> {{ user.userprofile.bio }}</li>
                         </ul>
-                        <a href="{% url 'edit_profile' %}" class="btn btn-primary" style="width: auto; padding: 0.25rem 0.5rem;">Edit Profile</a>
+                        <form method="get" action="{% url 'edit_profile' %}" style="display: inline;">
+                            <button type="submit" class="btn btn-warning btn-sm px-2" style="width: auto; padding: 0.25rem 0.5rem;">
+                                Edit Profile
+                            </button>
+                        </form>
                     </div>
                     <!-- Favorite Papers Section -->
                      <div class="favorite-papers mt-4">
