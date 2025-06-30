@@ -27,8 +27,14 @@ class PaperUploadForm(forms.ModelForm):
         fields = ['title', 'description', 'file', 'category', 'course']
 
 class EditProfileForm(forms.ModelForm):
-    bio = forms.CharField(widget=forms.Textarea, required=False)
+    bio = forms.CharField(required=False, widget=forms.Textarea)
 
     class Meta:
         model = User
         fields = ['username', 'email']
+
+    def __init__(self, *args, **kwargs):
+        profile = kwargs.pop('profile', None)
+        super().__init__(*args, **kwargs)
+        if profile:
+            self.fields['bio'].initial = profile.bio

@@ -232,17 +232,16 @@ def download_paper(request, paper_id):
 @login_required
 def edit_profile(request):
     user = request.user
-    profile = user.userprofile  # <-- this is the correct way for your case
+    profile = user.userprofile
 
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=user)
+        form = EditProfileForm(request.POST, instance=user, profile=profile)
         if form.is_valid():
             form.save()
-            profile.bio = form.cleaned_data['bio']
+            profile.bio = form.cleaned_data.get('bio', '')
             profile.save()
             return redirect('profile')
     else:
-        form = EditProfileForm(instance=user)
-        form.fields['bio'].initial = profile.bio
+        form = EditProfileForm(instance=user, profile=profile)
 
     return render(request, 'myapp/edit_profile.html', {'form': form})
