@@ -1,10 +1,21 @@
 UniTryhards
 
+Disclaimer: Για να τρέξετε την εφαρμογή θα χρειαστεί να έχετε εγκατεστημένο το DJango και το Git. Μόλις κάνετε pull το project από το εκάστοτε Repository μας στο Visual Studio Code (VSC), θα πληκτρολογήσετε τις εκάστοτε εντολές στο Terminal του VSC για να τρέξει η διαδικτυακή εφαρμογή - UniTryhards. Αν επιστραφεί το αποτέλεσμα που βλέπετε στο παρακάτω screenshot then you are good to go!
+
+![image](https://github.com/user-attachments/assets/db644eee-58e5-451a-bc06-d2e88b91ae3c)
+
+
+
 1.	Περιγραφή της εφαρμογής και των βασικών στόχων της:
 
 Η εφαρμογή μας φέρει το όνομα UniTryhards. Πρώτα απ’ όλα, το όνομα της εφαρμογής προκύπτει από δύο λέξεις: Uni (συντομογραφία του University) και Tryhards (ένας τρόπος που αποκαλούμε κάποιον όταν καταβάλλει μεγάλη προσπάθεια για κάτι με απώτερο σκοπό την επίτευξη του στόχου που έχει θέσει). Βασικός στόχος της εφαρμογής είναι η δωρεάν εξυπηρέτηση που προσφέρει σε οποιονδήποτε χρήστη, ακόμη κι αν δεν είναι φοιτητής, με σκοπό να προβεί στην προβολή, λήψη και σχολιασμό ποικίλων αρχείων (σημειώσεις μαθημάτων, επαναληπτικά θέματα εξεταστικής και περαιτέρω υποστηρικτικό υλικό) εφόσον κρίνει ότι έχει ανάγκη τη χρήση τους. Συγκεκριμένα, θα λειτουργεί ως ένα μέσο αρωγής γι’ αυτούς που το επιλέγουν.
      Επίσης, η βασική ανάγκη που καλύπτει η εφαρμογή είναι η διαθεσιμότητα των εγγράφων που αναφέρθηκαν παραπάνω, καθώς και η συνεχής προσθήκη νέων τέτοιων αρχείων στην πλατφόρμα. Ας σημειωθεί ότι, υπάρχει το ενδεχόμενο να μην παρατηρούνται τέτοια έγγραφα στην πληθώρα των ιστοσελίδων των πανεπιστημίων και άρα ορισμένοι φοιτητές να αντιμετωπίζουν δυσκολίες στην προετοιμασία των εξετάσεων χωρίς ένα υποστηρικτικό υλικό να τους καθοδηγεί και προηγούμενα θέματα εξεταστικής για να τους κατευθύνουν στη δομή που ενδέχεται να έχει ένα οποιοδήποτε διαγώνισμα.
-     Τέλος, η εφαρμογή θα υποστηρίζει μόνο τα ελληνικά πανεπιστήμια και τα τμήματα με τα μαθήματά τους που υπάγονται σε αυτά. Μπορεί να έχει πρόσβαση οποιοσδήποτε αλλά απευθύνεται κυρίως σε Έλληνες φοιτητές που αποζητούν επιπλέον καθοδήγηση από άλλους φοιτητές αυτού του δικτύου αλληλοβοήθειας κατά τη διάρκεια των σπουδών τους για κάποιο μάθημα του τμήματός τους.
+     Τέλος, η εφαρμογή θα υποστηρίζει μόνο τα ελληνικά πανεπιστήμια και τα τμήματα με τα μαθήματά τους που υπάγονται σε αυτά (βλ. τα screenshots παρακάτω). Μπορεί να έχει πρόσβαση οποιοσδήποτε αλλά απευθύνεται κυρίως σε Έλληνες φοιτητές που αποζητούν επιπλέον καθοδήγηση από άλλους φοιτητές αυτού του δικτύου αλληλοβοήθειας κατά τη διάρκεια των σπουδών τους για κάποιο μάθημα του τμήματός τους.
+
+![image](https://github.com/user-attachments/assets/b212d39e-2b87-485f-b04b-a7ab49e18e27)
+![image](https://github.com/user-attachments/assets/60fc8f98-b515-4cb2-9fd5-14d9c4c578b5)
+![image](https://github.com/user-attachments/assets/fc0f8b89-f69c-4d41-8aa6-641ce89eadc7)
+
 
 
 2.	Περιγραφή και τεκμηρίωση των λειτουργιών της εφαρμογής:
@@ -33,7 +44,8 @@ UniTryhards
 
 •	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
 
-![image](https://github.com/user-attachments/assets/e104327a-5755-4d6e-a328-b6c578b0016c)
+![image](https://github.com/user-attachments/assets/60f8e7ab-8b90-4367-aee7-15396f6a1012)
+
 
 
 Λειτουργία 3: File Upload.
@@ -46,7 +58,8 @@ UniTryhards
 
 •	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
 
-![image](https://github.com/user-attachments/assets/79d688c8-5856-4ce2-b0c6-5f8bbfdba5eb)
+![image](https://github.com/user-attachments/assets/00bfc83b-d821-40eb-bf3e-84ccc05a16d2)
+
 
 
 Λειτουργία 4: File Download.
@@ -59,7 +72,8 @@ UniTryhards
 
 •	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
 
-![image](https://github.com/user-attachments/assets/409d8d10-0641-4475-8948-5791290d304e)
+![image](https://github.com/user-attachments/assets/8529d00f-9142-40d6-8662-91e909b51764)
+
 
 
 Λειτουργία 5: Favourite File.
@@ -72,7 +86,10 @@ UniTryhards
 
 •	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
 
-![image](https://github.com/user-attachments/assets/ef00c5b2-f111-4fa2-bccd-b1a050e10783)
+![image](https://github.com/user-attachments/assets/82cfdb89-a72f-4fc9-a020-79f6f8aed715)
+![image](https://github.com/user-attachments/assets/17296330-22cf-4ae2-9dc8-60eee47b9e7b)
+![image](https://github.com/user-attachments/assets/754d5786-fe13-4d89-ac9e-9205cf4855e1)
+
 
 
 Λειτουργία 6: File Commenting.
@@ -85,7 +102,8 @@ UniTryhards
 
 •	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
 
-![image](https://github.com/user-attachments/assets/8c334638-8ff7-478d-8831-27e8e2a8e848)
+![image](https://github.com/user-attachments/assets/3bd1af9d-4fb7-4e6e-b67a-8df0b5ce617f)
+
 
 
 Λειτουργία 7: Filtering.
@@ -98,7 +116,11 @@ UniTryhards
 
 •	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
 
-![image](https://github.com/user-attachments/assets/1e3d0b04-967d-48a1-bdb3-e1edcbe2c7f0)
+![image](https://github.com/user-attachments/assets/aa108a84-ca22-4fff-a95e-7af5b976452d)
+![image](https://github.com/user-attachments/assets/3aca2aec-1e15-4982-a147-eef7c2859ee0)
+![image](https://github.com/user-attachments/assets/b9650ec7-33b2-4e87-85d6-806fe16150ce)
+![image](https://github.com/user-attachments/assets/c9f3251d-7ba1-4598-9e26-1c4e29624ea0)
+
 
 
 Λειτουργία 8: Logout χρήστη.
@@ -111,7 +133,8 @@ UniTryhards
 
 •	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
 
-![image](https://github.com/user-attachments/assets/af345e35-50dd-4f88-8876-743574e658ea)
+![image](https://github.com/user-attachments/assets/6f7faaee-aaf4-4ed4-a649-cdb4d7821694)
+
 
 
 3.	Σχήμα Βάσης Δεδομένων:
