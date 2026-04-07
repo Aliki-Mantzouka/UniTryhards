@@ -1,18 +1,20 @@
 UniTryhards
 
-Εργασία μαθήματος "Σχεδιασμός και Ανάπτυξη Διαδικτυακών Εφαρμογών" του τμήματος Διοίκησης Επιχειρήσεων και Οργανισμών του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών.
+Course project for "Internet Applications Design and Development" of the Department of Business Administration at the National and Kapodistrian University of Athens.
 
-Disclaimer: Για να τρέξετε την εφαρμογή θα χρειαστεί να έχετε εγκατεστημένο το DJango και το Git. Μόλις κάνετε pull το project από το εκάστοτε Repository μας στο Visual Studio Code (VSC), θα πληκτρολογήσετε τις εκάστοτε εντολές στο Terminal του VSC για να τρέξει η διαδικτυακή εφαρμογή - UniTryhards. Αν επιστραφεί το αποτέλεσμα που βλέπετε στο παρακάτω screenshot then you are good to go!
+Disclaimer: To run the application, you will need to have Django and Git installed. Once you pull the project from our respective Repository into Visual Studio Code (VSC), you will type the following commands in the VSC Terminal to run the web application - UniTryhards. If the result shown in the screenshot below is returned, then you are good to go!
 
 ![image](https://github.com/user-attachments/assets/db644eee-58e5-451a-bc06-d2e88b91ae3c)
 
 
 
-1.	Περιγραφή της εφαρμογής και των βασικών στόχων της:
+**1. Description of the application and its primary goals:**
 
-Η εφαρμογή μας φέρει το όνομα UniTryhards. Πρώτα απ’ όλα, το όνομα της εφαρμογής προκύπτει από δύο λέξεις: Uni (συντομογραφία του University) και Tryhards (ένας τρόπος που αποκαλούμε κάποιον όταν καταβάλλει μεγάλη προσπάθεια για κάτι με απώτερο σκοπό την επίτευξη του στόχου που έχει θέσει). Βασικός στόχος της εφαρμογής είναι η δωρεάν εξυπηρέτηση που προσφέρει σε οποιονδήποτε χρήστη, ακόμη κι αν δεν είναι φοιτητής, με σκοπό να προβεί στην προβολή, λήψη και σχολιασμό ποικίλων αρχείων (σημειώσεις μαθημάτων, επαναληπτικά θέματα εξεταστικής και περαιτέρω υποστηρικτικό υλικό) εφόσον κρίνει ότι έχει ανάγκη τη χρήση τους. Συγκεκριμένα, θα λειτουργεί ως ένα μέσο αρωγής γι’ αυτούς που το επιλέγουν.
-     Επίσης, η βασική ανάγκη που καλύπτει η εφαρμογή είναι η διαθεσιμότητα των εγγράφων που αναφέρθηκαν παραπάνω, καθώς και η συνεχής προσθήκη νέων τέτοιων αρχείων στην πλατφόρμα. Ας σημειωθεί ότι, υπάρχει το ενδεχόμενο να μην παρατηρούνται τέτοια έγγραφα στην πληθώρα των ιστοσελίδων των πανεπιστημίων και άρα ορισμένοι φοιτητές να αντιμετωπίζουν δυσκολίες στην προετοιμασία των εξετάσεων χωρίς ένα υποστηρικτικό υλικό να τους καθοδηγεί και προηγούμενα θέματα εξεταστικής για να τους κατευθύνουν στη δομή που ενδέχεται να έχει ένα οποιοδήποτε διαγώνισμα.
-     Ακόμη, η εφαρμογή θα υποστηρίζει μόνο τα ελληνικά πανεπιστήμια και τα τμήματα με τα μαθήματά τους που υπάγονται σε αυτά (βλ. τα screenshots παρακάτω). Μπορεί να έχει πρόσβαση οποιοσδήποτε αλλά απευθύνεται κυρίως σε Έλληνες φοιτητές που αποζητούν επιπλέον καθοδήγηση από άλλους φοιτητές αυτού του δικτύου αλληλοβοήθειας κατά τη διάρκεια των σπουδών τους για κάποιο μάθημα του τμήματός τους. Τέλος, δημιουργήσαμε κι έναν Discord Server για team-studying με chat rooms και live channels για όσους ενδιαφέρονται (βλ. τα screenshots παρακάτω).
+Our application is named UniTryhards. First and foremost, the name is derived from two words: Uni (short for University) and Tryhards (a term used to describe someone who puts in great effort to achieve a set goal). The primary goal of the application is to offer a free service to any user—even if they are not a student—allowing them to view, download, and comment on various files (course notes, past exam papers, and further supporting material) as they see fit. Specifically, it functions as a support tool for those who choose to use it.
+
+Additionally, the core need addressed by the application is the availability of the aforementioned documents, as well as the continuous addition of new files to the platform. It is worth noting that such documents are often absent from many university websites; consequently, some students face difficulties preparing for exams without supporting material to guide them or past exam papers to familiarize them with the potential structure of a test.
+
+Furthermore, the application will exclusively support Greek universities and their respective departments and courses (see screenshots below). While it is accessible to anyone, it is primarily aimed at Greek students seeking additional guidance from others within this mutual aid network during their studies. Finally, we have created a Discord Server for team-studying, featuring chat rooms and live channels for those interested (see screenshots below).
 
 ![image](https://github.com/user-attachments/assets/b212d39e-2b87-485f-b04b-a7ab49e18e27)
 ![image](https://github.com/user-attachments/assets/60fc8f98-b515-4cb2-9fd5-14d9c4c578b5)
@@ -22,73 +24,73 @@ Disclaimer: Για να τρέξετε την εφαρμογή θα χρειασ
 
 
 
-2.	Περιγραφή και τεκμηρίωση των λειτουργιών της εφαρμογής:
+**2. Description and documentation of the application's functions:**
 
-Λειτουργία 1: Sign Up χρήστη.
+**Function 1: User Sign Up**
 
-•	Περιγραφή: Η εφαρμογή εμφανίζει στον χρήστη τρία υποχρεωτικά πεδία προς συμπλήρωση για να αποκτήσει κάποιος λογαριασμό στην πλατφόρμα και να μπορεί να εκτελεί όλες τις λειτουργίες (ανέβασμα αρχείου, σχολιασμός, λήψη αρχείων). Μετά την ολοκλήρωση του sign Up μία φορά, θα μπορεί από εδώ και πέρα να συνδέεται με Log In τις επόμενες φορές.
+- Description: The application presents the user with three mandatory fields to complete in order to create an account on the platform and gain access to all features (uploading files, commenting, downloading files). Once the initial Sign Up is complete, the user will be able to sign in via the Log In page for future visits.
 
-•	Είσοδος: Ο χρήστης θα πρέπει να γράψει ένα username (μπορεί να είναι και ψευδώνυμο) της επιλογής του, ένα password της επιλογής του και να επικυρώσει το password για δεύτερη φορά. Μετά πατάει το κουμπί Sign Up και έχει πλέον λογαριασμό εφόσον τα πεδία είναι αποδεκτά από την εφαρμογή.
+- Input: The user must enter a username (pseudonyms are allowed) and a password of their choice, then confirm the password a second time. Upon clicking the "Sign Up" button, the account is created, provided the fields meet the application's requirements.
 
-•	Έξοδος: Ο χρήστης θα μπορεί πλέον να δει την αρχική οθόνη (Home screen) της εφαρμογής και από εκεί και πέρα να εκτελέσει τις λειτουργίες που προσφέρονται στο Menu ή να διαβάσει την περίληψη της εφαρμογής και τί αυτή προσφέρει που του παρουσιάζεται στο Home screen.
+- Output: The user is redirected to the application's Home screen, where they can access all available features through the Menu or read the overview of the application and its services.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/67eb65fb-8c52-4d92-98f0-d4040dee5735)
 
 
 
-Λειτουργία 2: Login χρήστη.
+**Function 2: User Login**
 
-•	Περιγραφή: Μετά την ολοκλήρωση της λειτουργίας Sign Up, ο χρήστης μπορεί πλέον να συνδέεται με Login στην εφαρμογή όποτε επιθυμεί.
+- Description: Following the completion of the Sign Up process, the user can now log in to the application whenever they wish.
 
-•	Είσοδος: Ο χρήστης καλείται να συμπληρώσει δύο πεδία αυτήν τη φορά. Στο ένα θα πρέπει να γράψει το username του (μοναδικό για κάθε χρήστη) και το password που επέλεξε κατά τη διαδικασία Sign Up. Στη συνέχεια θα πατήσει το κουμπί Login.
+- Input: The user is required to complete two fields this time. In the first, they must enter their username (unique for each user) and the password they selected during the Sign Up process. They then click the "Login" button.
 
-•	Έξοδος: Ο χρήστης θα προβεί στην αρχική οθόνη (Home screen) της εφαρμογής και από εκεί και πέρα θα μπορεί να εκτελέσει τις λειτουργίες που παρέχονται στο Menu αυτής.
+- Output: The user is directed to the application's Home screen, from where they can access all the features provided in the Menu.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/60f8e7ab-8b90-4367-aee7-15396f6a1012)
 
 
 
-Λειτουργία 3: File Upload.
+**Function 3: File Upload**
 
-•	Περιγραφή: Εφόσον ο χρήστης έχει συνδεθεί στην ιστοσελίδα, θα έχει τη δυνατότητα να ανεβάσει αρχεία. Κατά την επιλογή του αρχείου, ενθαρρύνεται να γράψει έναν τίτλο και κάποια περιγραφή για το εκάστοτε αρχείο. Επίσης, θα μπορεί να επιλέξει να το συγκεκριμενοποιήσει διαλέγοντας από μια λίστα συγκεκριμένων χαρακτηριστικών (Notes, Past Exam Questions, General), καθώς και να επιλέξει σε ποιο μάθημα θα το ανεβάσει για να βοηθήσει τους άλλους χρήστες στην εύρεση του αρχείου.
+- Description: Once the user is logged into the website, they will have the ability to upload files. When selecting a file, they are encouraged to provide a title and a description. Additionally, they can categorize the file by selecting from a list of specific tags (Notes, Past Exam Questions, General), and choose the specific course it belongs to, helping other users locate the file more easily.
 
-•	Είσοδος: Ο χρήστης επιλέγει ένα αρχείο από τα έγγραφά του και το εισάγει πατώντας Upload.
+- Input: The user selects a file from their local documents and submits it by clicking Upload.
 
-•	Έξοδος: Το αρχείο μεταφορτώνεται στην ιστοσελίδα και όλοι οι χρήστες μπορούν πλέον να το δουν.
+- Output: The file is uploaded to the website and becomes visible to all users.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/00bfc83b-d821-40eb-bf3e-84ccc05a16d2)
 
 
 
-Λειτουργία 4: View Paper και Download Paper.
+**Function 4: View Paper and Download Paper**
 
-•	Περιγραφή: Ανά πάσα στιγμή, οι χρήστες μπορούν να δουν ή και να κατεβάσουν οποιοδήποτε αρχείο τους ενδιαφέρει από την ιστοσελίδα και να το αποθηκεύσουν στον υπολογιστή τους.
+- Description: At any time, users can view or download any file of interest from the website and save it to their computer.
 
-•	Είσοδος: Ο χρήστης επιλέγει ένα αρχείο από την ιστοσελίδα, το πατάει για να δει το κουμπί View Paper ή Download Paper και ξεκινάει την λήψη του πατώντας το κουμπί αν χρειαστεί.
+- Input: The user selects a file from the website and clicks on it to reveal the View Paper or Download Paper buttons, then initiates the download by clicking the button if needed.
 
-•	Έξοδος: Το αρχείο θα υπάρχει πλέον στα Downloads της συσκευής του χρήστη.
+- Output: The file will now be available in the Downloads folder of the user's device.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/8529d00f-9142-40d6-8662-91e909b51764)
 
 
 
-Λειτουργία 5: Favourite Paper και Report Paper.
+**Function 5: Favorite Paper and Report Paper**
 
-•	Περιγραφή: Ο χρήστης θα μπορεί να βάλει στη λίστα αγαπημένων του (η οποία βρίσκεται στο Profile του - Favourite Papers) οποιοδήποτε αρχείο υπάρχει στην ιστοσελίδα και φυσικά να το αφαιρέσει αναιρώντας την ενέργεια. Επίσης, σε περίπτωση που το περιεχόμενο του εκάστοτε Paper δεν αρμόζει στο περιβάλλον της εφαρμογής, ο χρήστης θα μπορεί να το κάνει Report και μαζί με αυτήν την ενέργεια θα μπορεί να γράψει, αν επιθυμεί, κι ένα μήνυμα με τον λόγο για τον οποίο κατέφυγε σε αυτήν την ενέργεια.
+- Description: Users can add any file available on the website to their personal favorites list (located in their Profile - Favourite Papers) and, of course, remove it by undoing the action. Additionally, if the content of a specific Paper is inappropriate for the application's environment, the user can Report it. Along with this action, they have the option to include a message explaining the reason for the report.
 
-•	Είσοδος: Ο χρήστης επιλέγει μια δημοσίευση από την ιστοσελίδα και πατάει το κουμπί Favorite με το αστέρι.
+- Input: The user selects a post from the website and clicks the Favorite button (star icon).
 
-•	Έξοδος: Το αρχείο υπάρχει πλέον στην λίστα με τις αγαπημένες δημοσιεύσεις του χρήστη.
+- Output: The file is now included in the user's list of favorite posts.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/82cfdb89-a72f-4fc9-a020-79f6f8aed715)
 ![image](https://github.com/user-attachments/assets/17296330-22cf-4ae2-9dc8-60eee47b9e7b)
@@ -97,29 +99,29 @@ Disclaimer: Για να τρέξετε την εφαρμογή θα χρειασ
 
 
 
-Λειτουργία 6: File Commenting.
+**Function 6: File Commenting**
 
-•	Περιγραφή:  Ο χρήστης έχει τη δυνατότητα να σχολιάσει κάθε δημοσίευση με ένα μήνυμα που να δε θα ξεπερνάει τους 500 χαρακτήρες.
+- Description: Users have the ability to comment on any post with a message that does not exceed 500 characters.
 
-•	Είσοδος: Ο χρήστης καταγράφει το σχόλιό του στο κουτί Write your comment και πατάει το κουμπί Submit για να το ανεβάσει στην πλατφόρμα.
+- Input: The user types their comment into the "Write your comment" box and clicks the Submit button to upload it to the platform.
 
-•	Έξοδος: Το σχόλιο του δημοσιεύεται και μπορούν όλοι πλέον να το διαβάσουν και να αλληλοεπιδράσουν μαζί του.
+- Output: The comment is published, allowing all users to read and interact with it.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/3bd1af9d-4fb7-4e6e-b67a-8df0b5ce617f)
 
 
 
-Λειτουργία 7: Papers Filtering.
+**Function 7: Paper Filtering**
 
-•	Περιγραφή:  Οι λειτουργίες φιλτραρίσματος υπάρχουν για την ευκολία του χρήστη κατά την αναζήτηση αρχείων σε ένα συγκεκριμένο μάθημα. Με αυτόν τον τρόπο αν αναζητεί κάτι συγκεκριμένο, για παράδειγμα σημειώσεις, θα πατήσει στο κουμπί Notes για να φιλτραριστούν ανάλογα τα αποτελέσματα.
+- Description: Filtering functions are provided for the user's convenience when searching for files within a specific course. This way, if they are looking for something specific—for example, notes—they can click the Notes button to filter the results accordingly.
 
-•	Είσοδος: Ο χρήστης φιλτράρει τα αποτελέσματα του αν αναζητεί κάτι συγκεκριμένο στο εκάστοτε μάθημα.
+- Input: The user filters the results if they are searching for a specific type of material within a given course.
 
-•	Έξοδος: Στην οθόνη του χρήστη εμφανίζονται αποτελέσματα με αρχεία (αν υπάρχουν) με βάση το φιλτράρισμα που επέλεξε.
+- Output: The files (if any) that match the selected filter are displayed on the user's screen.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/aa108a84-ca22-4fff-a95e-7af5b976452d)
 ![image](https://github.com/user-attachments/assets/3aca2aec-1e15-4982-a147-eef7c2859ee0)
@@ -128,50 +130,50 @@ Disclaimer: Για να τρέξετε την εφαρμογή θα χρειασ
 
 
 
-Λειτουργία 8: Logout χρήστη.
+**Function 8: User Logout**
 
-•	Περιγραφή: Μετά την ολοκλήρωση του σκοπού για τον οποίο συνδέθηκε ο χρήστης στην εφαρμογή, θα μπορεί να προβεί στην έξοδό του από αυτήν.
+- Description: Once the user has completed their tasks within the application, they can proceed to log out.
 
-•	Είσοδος: Ο χρήστης θα πατήσει πάνω αριστερά το Menu και θα προβληθεί μια λίστα με επιλογές όπου η τελευταία θα είναι η Logout.
+- Input: The user clicks the Menu icon at the top left, which displays a list of options where the last one is Logout.
 
-•	Έξοδος: Ο χρήστης θα αποσυνδεθεί από την εφαρμογή και θα μεταβεί στην οθόνη Login. Θα πρέπει να ξανασυνδεθεί (Login) για να μπορεί και πάλι να εκτελέσει τις λειτουργίες της εφαρμογής.
+- Output: The user is logged out of the application and redirected to the Login screen. They must log in again to regain access to the application's features.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/6f7faaee-aaf4-4ed4-a649-cdb4d7821694)
 
 
 
-Λειτουργία 9: Επεξεργασία προφίλ χρήστη.
+**Function 9: User Profile Editing**
 
-•	Περιγραφή: Ο χρήστης θα μπορεί να επεξεργαστεί το προφίλ του στη σελίδα Profile και να αλλάξει το username (μοναδικό για κάθε άτομο), το email (μοναδικό για κάθε χρήστη) και το bio του.
+- Description: Users can edit their profile on the Profile page to change their username (unique for each person), email (unique for each user), and bio.
 
-•	Είσοδος: Ο χρήστης θα πατήσει το κουμπί Edit Profile.
+- Input: The user clicks the Edit Profile button.
 
-•	Έξοδος: Ο χρήστης θα μεταβεί στη σελίδα για να κάνει όσες αλλαγές επιθυμεί στα πεδία που αναφέρθηκαν.
+- Output: The user is directed to a page where they can make any desired changes to the aforementioned fields.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/b39e1d18-20d5-4639-86d5-8d1c6804756d)
 ![image](https://github.com/user-attachments/assets/b91fb520-a4c3-4336-b8f1-df85211f07b4)
 
 
 
-Λειτουργία 10: Αλλαγή Κωδικού Πρόσβασης χρήστη.
+**Function 10: User Password Change**
 
-•	Περιγραφή: Στη σελίδα Profile, ο χρήστης θα μπορεί να αλλάξει τον εκάστοτε κωδικό πρόσβασής του με έναν άλλον της επιλογής του αν υπάρχει ανάγκη.
+- Description: On the Profile page, the user can replace their current password with a new one of their choice if needed.
 
-•	Είσοδος: Ο χρήστης θα πατήσει το κουμπί Change Password.
+- Input: The user clicks the Change Password button.
 
-•	Έξοδος: Θα προβληθεί μια φόρμα για την αλλαγή του κωδικού και την επικύρωση του καινούριου κωδικού στον χρήστη.
+- Output: A form is displayed for the user to enter their new password and confirm it.
 
-•	Mock-up οθόνη: Δείτε την εικόνα παρακάτω:
+- Mock-up Screen: See the image below:
 
 ![image](https://github.com/user-attachments/assets/71c678d0-852d-4084-a206-1505578a7144)
 ![image](https://github.com/user-attachments/assets/c8accbe4-b9b9-496c-a02d-5d52fa64f072)
 
 
 
-3.	Σχήμα Βάσης Δεδομένων:
+**3. Database Schema:**
 
 ![image](https://github.com/user-attachments/assets/a9b3ce0c-30fe-499f-a6b5-f8084cd42ed9)
