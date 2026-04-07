@@ -1,8 +1,8 @@
-UniTryhards
+# UniTryhards
 
 Course project for "Internet Applications Design and Development" of the Department of Business Administration at the National and Kapodistrian University of Athens.
 
-Disclaimer: To run the application, you will need to have Django and Git installed. Once you pull the project from our respective Repository into Visual Studio Code (VSC), you will type the following commands in the VSC Terminal to run the web application - UniTryhards. If the result shown in the screenshot below is returned, then you are good to go!
+**Disclaimer:** To run the application, you will need to have Django and Git installed. Once you pull the project from our respective Repository into Visual Studio Code (VSC), you will type the following commands in the VSC Terminal to run the web application - UniTryhards. If the result shown in the screenshot below is returned, then you are good to go!
 
 ![image](https://github.com/user-attachments/assets/db644eee-58e5-451a-bc06-d2e88b91ae3c)
 
