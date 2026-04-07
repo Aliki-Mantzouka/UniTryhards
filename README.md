@@ -1,4 +1,4 @@
-# UniTryhards
+# UniTryhards 📚
 
 Course project for "Internet Applications Design and Development" of the Department of Business Administration at the National and Kapodistrian University of Athens.
 
